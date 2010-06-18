@@ -12,7 +12,7 @@ class DownloadsController < ApplicationController
   
   def download_game
     @download = Download.find(params[:id])
-    uri = URI.parse("http://romhustler.net#{@download.url_two}")
+    uri = URI.parse("http://your-url.com#{@download.url_two}")
     scraper = Scraper.define do
       process "html>body>div:nth-of-type(2)>div:nth-of-type(2)>script:nth-of-type(1)", :javascript => :element
       

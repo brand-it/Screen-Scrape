@@ -16,7 +16,7 @@ namespace :scrape do
     for system in systems
       puts system
       for abc in abcarray
-        uri = URI.parse("http://romhustler.net/roms/#{system}/#{abc}")
+        uri = URI.parse("http://your-url.com/roms/#{system}/#{abc}")
   
   
         scraper = Scraper.define do
@@ -32,7 +32,7 @@ namespace :scrape do
     
           #Adds the information to the db
     
-          uri = URI.parse("http://romhustler.net/#{product.linkone}")
+          uri = URI.parse("http://your-url.com/#{product.linkone}")
           scraper_step2 = Scraper.define do
             process "html>body>div:nth-of-type(3)>div:nth-of-type(2)>p:nth-of-type(3)>a:nth-of-type(1)", :linktwo => "@href"
             result :linktwo

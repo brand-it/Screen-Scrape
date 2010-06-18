@@ -6,7 +6,7 @@ abcarray = ["a", "b"]
 #   "s", "t", "u", "v", "w", "x", "y", "z"]
   
 for abc in abcarray
-  uri = URI.parse("http://romhustler.net/roms/snes/#{abc}")
+  uri = URI.parse("http://your-url.com/roms/snes/#{abc}")
   
   
   scraper = Scraper.define do
@@ -22,7 +22,7 @@ for abc in abcarray
     puts product.title
     puts product.link
     
-    uri = URI.parse("http://romhustler.net/#{product.link}")
+    uri = URI.parse("http://your-url.com/#{product.link}")
     scraper_step2 = Scraper.define do
       process "html>body>div:nth-of-type(3)>div:nth-of-type(2)>p:nth-of-type(3)>a:nth-of-type(1)", :link => "@href"
       result :link
@@ -30,7 +30,7 @@ for abc in abcarray
     step2_url = scraper_step2.scrape(uri)
     puts step2_url
     
-    uri = URI.parse("http://romhustler.net/#{step2_url}")
+    uri = URI.parse("http://your-url.com/#{step2_url}")
     scraper_step3 = Scraper.define do
       process "html>body>div:nth-of-type(2)>div:nth-of-type(2)>script:nth-of-type(1)", :javascript => :element
       
