@@ -1,0 +1,23 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "downloads" [0m
+
+
+Processing DownloadsController#create (for 0.0.0.0 at 2010-06-15 22:24:50) [POST]
+  Parameters: {"download"=>{}}
+  [4;35;1mDownload Create (0.4ms)[0m   [0mINSERT INTO "downloads" ("created_at", "title", "updated_at", "url_one", "url_two") VALUES('2010-06-16 05:24:50', NULL, '2010-06-16 05:24:50', NULL, NULL)[0m
+Redirected to http://test.host/downloads/1
+Completed in 15ms (DB: 1) | 302 Found [http://test.host/downloads?]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "downloads" [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "downloads" [0m
+
+
+Processing DownloadsController#index (for 0.0.0.0 at 2010-06-15 22:24:50) [GET]
+  [4;36;1mDownload Load (0.1ms)[0m   [0;1mSELECT * FROM "downloads" [0m
+Rendering template within layouts/downloads
+Rendering downloads/index
+Completed in 24ms (View: 23, DB: 1) | 200 OK [http://test.host/downloads]
+
+
+Processing DownloadsController#new (for 0.0.0.0 at 2010-06-15 22:24:50) [GET]
+Rendering template within layouts/downloads
+Rendering downloads/new
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://test.host/downloads/new]

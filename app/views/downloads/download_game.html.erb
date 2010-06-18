@@ -1,0 +1,9 @@
+<h1><%= @download.title %></h1>
+<div id="rom">
+</div>
+
+<%= @javascript %>
+<% javascript_tag do %>
+ document.getElementById("rom").innerHTML='Click <a href="' + link + '" class="important">here</a> to start your download';
+<% end -%>
+

@@ -1,0 +1,8 @@
+<%= link_to "NES", nes_path %> <%= link_to "SNES", snes_path %>
+<%= @downloads.count %>
+<% for download in @downloads %>
+  <div class="category">
+    <h3><%=link_to download.title, download_game_download_path(:id => download) %></h3>
+  </div>
+<% end %>
+
